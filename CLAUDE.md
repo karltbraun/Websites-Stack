@@ -39,9 +39,21 @@ Websites/                       ← this repo (infrastructure only)
 
 ## Host System
 
-- **VM**: Vultr Ubuntu 22.04.5 LTS, hostname `vultr`
+- **VM**: Vultr Ubuntu 22.04.5 LTS, hostname `vultr2`, IP `45.63.82.34`
 - **Docker management**: Portainer extension on Docker Desktop (MacBook Pro)
 - Stack management is done through the Portainer UI; `portainer-stack.yml` is kept here to paste into the Portainer stack editor
+- **Git remotes must use SSH** — HTTPS auth is not configured on vultr2. If a push/pull fails with "No such device or address", switch the remote: `git remote set-url origin git@github.com:karltbraun/<repo>.git`
+
+## GitHub Repositories
+
+| Repo | GitHub URL |
+|---|---|
+| Infrastructure (this repo) | github.com/karltbraun/Websites-Stack |
+| karltbraun | github.com/karltbraun/karltbraun-website |
+| ktbcs | github.com/karltbraun/ktbcs-website |
+| skinnereditorial | github.com/karltbraun/skinnereditorial-website |
+| skinnerbraun | github.com/karltbraun/skinnerbraun-website |
+| SkinnerWilliamsBraun | github.com/karltbraun/SkinnerWilliamsBraun-Website |
 
 ## Deployment Workflow
 
@@ -53,11 +65,17 @@ Websites/                       ← this repo (infrastructure only)
 
 ## SSL Certificates
 
-Certificates are managed by certbot and mounted from `/etc/letsencrypt` on the VM.
+Certificates are managed by certbot on the VM host and mounted from `/etc/letsencrypt` into the nginx container.
 
+Manual renewal:
 ```bash
-certbot renew
+sudo certbot renew
 docker restart websites-nginx
+```
+
+Auto-renewal is handled by a systemd timer (`certbot.timer`). A deploy hook at `/etc/letsencrypt/renewal-hooks/deploy/restart-nginx.sh` restarts the nginx container automatically after each successful renewal. To verify the timer is active:
+```bash
+systemctl status certbot.timer
 ```
 
 ## Adding a New Site

@@ -47,8 +47,11 @@ docker run --rm -v "$PWD/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:alpine nginx
 
 ## SSL Certificate Renewal
 
+Certificates are managed by certbot on the VM (`vultr2`, `45.63.82.34`) and auto-renewed via systemd timer. A deploy hook restarts the nginx container after each successful renewal.
+
+Manual renewal if needed:
 ```bash
-certbot renew
+sudo certbot renew
 docker restart websites-nginx
 ```
 

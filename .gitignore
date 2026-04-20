@@ -1,0 +1,20 @@
+# Site repos are independent git repos, not tracked here
+karltbraun/
+ktbcs/
+skinnereditorial/
+SkinnerWilliamsBraun/
+skinnerbraun/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temp
+*.log
+*.tmp
+*.bak

@@ -32,7 +32,7 @@ Quick fixes while the stack is already being touched.
 
 - [x] Remove unused ports `8082` and `8443` from `portainer-stack.yml`
 - [x] Verified volume mount paths: repo is confirmed at `/home/karl/Development/KTBCS/Websites/` on vultr2
-- [ ] Add a placeholder HTTP-only server block for `skinnerbraun.com` to `nginx.conf` (makes cert addition trivial later)
+- [x] Add a placeholder HTTP-only server block for `skinnerbraun.com` to `nginx.conf` (makes cert addition trivial later)
 - [ ] Add `skinnerbraun/DocumentRoot` volume mount to `portainer-stack.yml`
 - [x] Update domain/DNS table in `CLAUDE.md` with registrar info once confirmed
 - [x] Clean up stale repo at `/home/karl/Dev/KTBCS/Websites/` on vultr2

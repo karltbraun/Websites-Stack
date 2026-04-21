@@ -35,7 +35,7 @@ Quick fixes while the stack is already being touched.
 - [ ] Add a placeholder HTTP-only server block for `skinnerbraun.com` to `nginx.conf` (makes cert addition trivial later)
 - [ ] Add `skinnerbraun/DocumentRoot` volume mount to `portainer-stack.yml`
 - [x] Update domain/DNS table in `CLAUDE.md` with registrar info once confirmed
-- [ ] Clean up stale repo at `/home/karl/Dev/KTBCS/Websites/` on vultr2
+- [x] Clean up stale repo at `/home/karl/Dev/KTBCS/Websites/` on vultr2
 
 ---
 

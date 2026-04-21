@@ -41,10 +41,10 @@ Websites/                       ← this repo (infrastructure only)
 
 | Domain | Registrar | DNS | Notes |
 |---|---|---|---|
-| ktbcs.xyz | — | — | Active, cert expired (needs renewal) |
+| ktbcs.xyz | — | — | Active, cert valid, certbot-managed |
 | karltbraun.net | — | — | Active DNS, no cert |
-| skinnereditorial.com | — | — | Active, cert expired (needs renewal) |
-| skinnerwilliamsbraun.net | — | — | Active, cert valid |
+| skinnereditorial.com | — | — | Active, cert valid, certbot-managed |
+| skinnerwilliamsbraun.net | — | — | Active, cert valid, certbot-managed; cert lives at `/etc/letsencrypt/live/skinnerwilliamsbraun.net-0001/` (not `…/skinnerwilliamsbraun.net/`) — original dir existed when certbot took over |
 | skinnerbraun.com | GoDaddy | Cloudflare | Registered, not yet live |
 | skinnerbraun.xyz | Namecheap | Cloudflare | Lab/dev domain, not yet live |
 

@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "Websites",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.autoRepositoryDetection": "subFolders",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.astro": true,
+      "**/dist": true,
+      "**/node_modules": true
+    },
+    "search.exclude": {
+      "**/.astro": true,
+      "**/dist": true,
+      "**/node_modules": true
+    },
+    "files.watcherExclude": {
+      "**/.astro/**": true,
+      "**/dist/**": true,
+      "**/node_modules/**": true
+    }
+  }
+}

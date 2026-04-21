@@ -25,17 +25,25 @@ A single `nginx:alpine` Docker container handles all domains:
 ## Directory Structure
 
 ```
-Websites/                       ← this repo (infrastructure only)
-├── CLAUDE.md                   ← AI context (this file)
-├── README.md                   ← human-readable documentation
-├── nginx.conf                  ← unified virtual host config for all domains
-├── portainer-stack.yml         ← Docker Compose — paste into Portainer stack editor
-├── karltbraun/                 ← own git repo (karltbraun.net)
-├── ktbcs/                      ← own git repo (ktbcs.xyz)
-├── skinnereditorial/           ← own git repo (skinnereditorial.com)
-├── SkinnerWilliamsBraun/       ← own git repo (skinnerwilliamsbraun.net, Astro app)
-└── skinnerbraun/               ← own git repo (domain TBD, no content yet)
+Websites/                           ← this repo (infrastructure only)
+├── CLAUDE.md                       ← AI context (this file)
+├── README.md                       ← human-readable documentation
+├── KTBCS-Websites.code-workspace   ← VS Code named workspace (open this, not the folder)
+├── nginx.conf                      ← unified virtual host config for all domains
+├── portainer-stack.yml             ← Docker Compose — paste into Portainer stack editor
+├── karltbraun/                     ← own git repo (karltbraun.net)
+├── ktbcs/                          ← own git repo (ktbcs.xyz)
+├── skinnereditorial/               ← own git repo (skinnereditorial.com)
+├── SkinnerWilliamsBraun/           ← own git repo (skinnerwilliamsbraun.net, Astro app)
+└── skinnerbraun/                   ← own git repo (domain TBD, no content yet)
 ```
+
+## Development Environment
+
+Open `KTBCS-Websites.code-workspace` in VS Code (not the raw folder). Key workspace settings:
+
+- `git.autoRepositoryDetection: "subFolders"` — VS Code's Source Control panel shows each sub-repo (karltbraun, ktbcs, etc.) independently, which is important because each subdirectory is its own git repo.
+- `.astro`, `dist`, and `node_modules` are excluded from the file explorer, search, and file watcher.
 
 ## Domain and DNS Notes
 

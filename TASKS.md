@@ -34,7 +34,7 @@ Quick fixes while the stack is already being touched.
 - [x] Verified volume mount paths: repo is confirmed at `/home/karl/Development/KTBCS/Websites/` on vultr2
 - [ ] Add a placeholder HTTP-only server block for `skinnerbraun.com` to `nginx.conf` (makes cert addition trivial later)
 - [ ] Add `skinnerbraun/DocumentRoot` volume mount to `portainer-stack.yml`
-- [ ] Update domain/DNS table in `CLAUDE.md` with registrar info once confirmed
+- [x] Update domain/DNS table in `CLAUDE.md` with registrar info once confirmed
 - [ ] Clean up stale repo at `/home/karl/Dev/KTBCS/Websites/` on vultr2
 
 ---

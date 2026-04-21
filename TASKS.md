@@ -10,13 +10,18 @@ The HTTP→HTTPS redirects in `nginx.conf` block certbot's HTTP-01 ACME challeng
 
 - [x] Add `/.well-known/acme-challenge/` location block (before the redirect) to the HTTP server blocks for `ktbcs.xyz`, `skinnereditorial.com`, and `skinnerwilliamsbraun.net` in `nginx.conf`
 - [x] Add `/var/www/certbot` volume mount to `portainer-stack.yml`
-- [ ] Commit and push changes to this repo
-- [ ] On vultr2: `git pull`
-- [ ] Redeploy `websites-nginx` stack in Portainer
-- [ ] On vultr2: `sudo certbot renew --force-renewal` — verify both certs issue successfully
-- [ ] Confirm deploy hook fired and nginx restarted (`docker ps` — check restart time)
-- [ ] On vultr2: `sudo certbot renew --dry-run` — confirm auto-renewal will succeed going forward
-- [ ] Verify `skinnerwilliamsbraun.net` cert is valid and auto-renewal is working (`sudo certbot certificates`)
+- [x] Commit and push changes to this repo
+- [x] On vultr2: `git pull` (was already up to date)
+- [x] Create `/var/www/certbot` directory on vultr2
+- [x] Removed stale manually-started `websites-nginx` container (was running old config from `/home/karl/Dev/KTBCS/Websites/`)
+- [x] Deployed `ktbcs-websites-2026-04` stack in Portainer
+- [x] On vultr2: `sudo certbot renew --force-renewal` — both certs renewed (valid until 2026-07-20)
+- [x] Fixed deploy hook (`/etc/letsencrypt/renewal-hooks/deploy/reload-apache.sh`) — was restarting `lamp-php-httpd` (old LAMP stack), now restarts `websites-nginx`
+- [x] Restarted `websites-nginx` to pick up new certs
+- [x] Fixed renewal configs for `ktbcs.xyz` and `skinnereditorial.com` from `standalone` to `webroot` authenticator
+- [x] On vultr2: `sudo certbot renew --dry-run` — both succeeded
+- [ ] Verify `skinnerwilliamsbraun.net` cert status — **NOT managed by certbot**, cert files may exist at `/etc/letsencrypt/live/skinnerwilliamsbraun.net/` but source/expiry unknown. Next step: `sudo openssl x509 -in /etc/letsencrypt/live/skinnerwilliamsbraun.net/fullchain.pem -noout -dates`
+- [ ] Get certbot managing `skinnerwilliamsbraun.net` cert with webroot authenticator
 - [ ] Verify `systemctl status certbot.timer` is active on vultr2
 
 ---
@@ -26,10 +31,11 @@ The HTTP→HTTPS redirects in `nginx.conf` block certbot's HTTP-01 ACME challeng
 Quick fixes while the stack is already being touched.
 
 - [x] Remove unused ports `8082` and `8443` from `portainer-stack.yml`
-- [ ] Verify that volume mount paths in `portainer-stack.yml` match the actual checkout path on vultr2 (currently assumes `/home/karl/Development/KTBCS/Websites/`)
+- [x] Verified volume mount paths: repo is confirmed at `/home/karl/Development/KTBCS/Websites/` on vultr2
 - [ ] Add a placeholder HTTP-only server block for `skinnerbraun.com` to `nginx.conf` (makes cert addition trivial later)
 - [ ] Add `skinnerbraun/DocumentRoot` volume mount to `portainer-stack.yml`
 - [ ] Update domain/DNS table in `CLAUDE.md` with registrar info once confirmed
+- [ ] Clean up stale repo at `/home/karl/Dev/KTBCS/Websites/` on vultr2
 
 ---
 

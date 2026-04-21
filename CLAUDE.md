@@ -16,7 +16,7 @@ A single `nginx:alpine` Docker container handles all domains:
 | ktbcs | `ktbcs/` | ktbcs.xyz | Static files | Yes |
 | skinnereditorial | `skinnereditorial/` | skinnereditorial.com | Static files | Yes |
 | SkinnerWilliamsBraun | `SkinnerWilliamsBraun/` | skinnerwilliamsbraun.net | Reverse proxy → :8080 | Yes |
-| skinnerbraun | `skinnerbraun/` | TBD | Not yet configured | No |
+| skinnerbraun | `skinnerbraun/` | skinnerbraun.com | Not yet configured | No |
 
 **Static sites** (karltbraun, ktbcs, skinnereditorial, skinnerbraun): `DocumentRoot/` is bind-mounted read-only into the nginx container. File saves take effect immediately — no container restart needed.
 
@@ -36,6 +36,17 @@ Websites/                       ← this repo (infrastructure only)
 ├── SkinnerWilliamsBraun/       ← own git repo (skinnerwilliamsbraun.net, Astro app)
 └── skinnerbraun/               ← own git repo (domain TBD, no content yet)
 ```
+
+## Domain and DNS Notes
+
+| Domain | Registrar | DNS | Notes |
+|---|---|---|---|
+| ktbcs.xyz | — | — | Active, cert expired (needs renewal) |
+| karltbraun.net | — | — | Active DNS, no cert |
+| skinnereditorial.com | — | — | Active, cert expired (needs renewal) |
+| skinnerwilliamsbraun.net | — | — | Active, cert valid |
+| skinnerbraun.com | GoDaddy | Cloudflare | Registered, not yet live |
+| skinnerbraun.xyz | Namecheap | Cloudflare | Lab/dev domain, not yet live |
 
 ## Host System
 

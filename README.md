@@ -10,7 +10,7 @@ Shared nginx infrastructure for five family and business websites, running as a 
 | ktbcs | ktbcs.xyz | Active (HTTPS) |
 | skinnereditorial | skinnereditorial.com | Active (HTTPS) |
 | SkinnerWilliamsBraun | skinnerwilliamsbraun.net | Active (HTTPS, Astro app) |
-| skinnerbraun | TBD | Placeholder, not yet live |
+| skinnerbraun | skinnerbraun.com | Registered, not yet configured |
 
 ## How It Works
 

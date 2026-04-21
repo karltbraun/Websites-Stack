@@ -20,9 +20,9 @@ The HTTP→HTTPS redirects in `nginx.conf` block certbot's HTTP-01 ACME challeng
 - [x] Restarted `websites-nginx` to pick up new certs
 - [x] Fixed renewal configs for `ktbcs.xyz` and `skinnereditorial.com` from `standalone` to `webroot` authenticator
 - [x] On vultr2: `sudo certbot renew --dry-run` — both succeeded
-- [ ] Verify `skinnerwilliamsbraun.net` cert status — **NOT managed by certbot**, cert files may exist at `/etc/letsencrypt/live/skinnerwilliamsbraun.net/` but source/expiry unknown. Next step: `sudo openssl x509 -in /etc/letsencrypt/live/skinnerwilliamsbraun.net/fullchain.pem -noout -dates`
-- [ ] Get certbot managing `skinnerwilliamsbraun.net` cert with webroot authenticator
-- [ ] Verify `systemctl status certbot.timer` is active on vultr2
+- [x] Verify `skinnerwilliamsbraun.net` cert status — issued new cert via certbot webroot; lives at `/etc/letsencrypt/live/skinnerwilliamsbraun.net-0001/` (valid until 2026-07-20)
+- [x] Get certbot managing `skinnerwilliamsbraun.net` cert with webroot authenticator
+- [x] Verify `systemctl status certbot.timer` is active on vultr2
 
 ---
 

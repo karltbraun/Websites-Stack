@@ -9,6 +9,7 @@ services:
       - "/home/karl/Development/KTBCS/Websites/karltbraun/DocumentRoot:/var/www/karltbraun:ro"
       - "/home/karl/Development/KTBCS/Websites/ktbcs/DocumentRoot:/var/www/ktbcs:ro"
       - "/home/karl/Development/KTBCS/Websites/skinnereditorial/DocumentRoot:/var/www/skinnereditorial:ro"
+      - "/home/karl/Development/KTBCS/Websites/skinnerbraun/DocumentRoot:/var/www/skinnerbraun:ro"
       - "/home/karl/Development/KTBCS/Websites/nginx.conf:/etc/nginx/nginx.conf:ro"
       - "/etc/letsencrypt:/etc/letsencrypt:ro"
       - "/var/www/certbot:/var/www/certbot:ro"
